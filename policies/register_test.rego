@@ -41,7 +41,11 @@ test_no_email {
 }
 
 test_short_username {
-	not allow with input as {"username": "a", "registration_method": "upstream-oauth2"}
+	not allow with input as {"username": "", "registration_method": "upstream-oauth2"}
+}
+
+test_shortest_username {
+	allow with input as {"username": "a", "registration_method": "upstream-oauth2"}
 }
 
 test_long_username {
